@@ -2,6 +2,8 @@
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 
 define('LARAVEL_START', microtime(true));
 
@@ -43,6 +45,9 @@ require __DIR__.'/../vendor/autoload.php';
 | to this client's browser, allowing them to enjoy our application.
 |
 */
+
+Route::get('admin/index',[LoaiController::class , 'index'] )->name('admin.loai.index');
+
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
