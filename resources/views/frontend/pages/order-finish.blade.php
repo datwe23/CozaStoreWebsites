@@ -1,0 +1,59 @@
+{{-- View này sẽ kế thừa giao diện từ `frontend.layouts.master` --}}
+@extends('frontend.layouts.master')
+
+{{-- Thay thế nội dung vào Placeholder `title` của view `frontend.layouts.master` --}}
+@section('title')
+CozaStore | Order 
+@endsection
+
+{{-- Thay thế nội dung vào Placeholder `custom-css` của view `frontend.layouts.master` --}}
+@section('custom-css')
+@endsection
+
+{{-- Thay thế nội dung vào Placeholder `main-content` của view `frontend.layouts.master` --}}
+@section('main-content')
+<!-- Title page -->
+<div class="" style="padding-top:20px">
+
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('https://static.vecteezy.com/system/resources/previews/003/293/641/non_2x/success-word-concept-flat-banner-vector.jpg'); background-size:59%">
+    </section>
+</div>
+
+
+<!-- Content page -->
+<section class="bg0 p-t-75 p-b-120">
+    <div class="container">
+        <div class="row p-b-148">
+            <div class="col-md-7 col-lg-8">
+                <div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+                    <h3 class="mtext-111 cl2 p-b-16">
+                        Order completed
+                    </h3>
+
+                    <p class="stext-113 cl6 p-b-26">
+                        We have sent an order confirmation email to you. Please check your mailbox. Thank you for trusting our products.
+                    </p>
+
+                    <p class="stext-113 cl6 p-b-26">
+                        If you need assistance, please call our hotline for help when needed:
+                        TEL: 0915-659-223
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-11 col-md-5 col-lg-4 m-lr-auto">
+                <div class="how-bor1 ">
+                    <div class="hov-img0">
+                        <img src="https://nationaltoday.com/wp-content/uploads/2021/06/Shopping-Cart-Day-1-640x514.jpg" alt="IMG">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@endsection
+
+{{-- Thay thế nội dung vào Placeholder `custom-scripts` của view `frontend.layouts.master` --}}
+@section('custom-scripts')
+@endsection
