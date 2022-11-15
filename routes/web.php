@@ -20,27 +20,6 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-use App\Http\Controllers\Backend\LoaiController;
-// route Danh mục Loại Sản phẩm
-// Hàm Route::resource() sẽ tạo toàn bộ các route CRUD theo tiêu chuẩn RestFul API
-Route::get('admin/index',[LoaiController::class , 'index'] )->name('admin.loai.index');
-Route::get('admin/loai/create', [LoaiController::class , 'create'])->name('admin.loai.create');
-Route::post('admin/loai/store', [LoaiController::class , 'store'])->name('admin.loai.store');
-Route::get('/admin/loai/edit/{id}', [LoaiController::class , 'edit'])->name('admin.loai.edit');
-Route::put('/admin/loai/edit/{id}', [LoaiController::class , 'update'])->name('admin.loai.update');
-Route::delete('/admin/loai/delete/{id}', [LoaiController::class , 'destroy'])->name('admin.loai.destroy');
-
-use App\Http\Controllers\Backend\SanPhamController;
-Route::resource('/admin/sanpham', 'App\Http\Controllers\Backend\SanPhamController', ['as' => 'admin']);
-Route::get('admin/sanpham', [SanphamController::class , 'index'])->name('admin.sanpham.index');
-Route::get('admin/sanpham/create', [SanphamController::class , 'create'])->name('admin.sanpham.create');
-Route::post('admin/sanpham/store', [SanphamController::class , 'store'])->name('admin.sanpham.store');
-Route::get('/admin/sanpham/edit/{id}', [SanphamController::class , 'edit'])->name('admin.sanpham.edit');
-Route::put('/admin/sanpham/edit/{id}', [SanphamController::class , 'update'])->name('admin.sanpham.update');
-Route::delete('/admin/sanpham/delete/{id}', [SanphamController::class , 'destroy'])->name('admin.sanpham.destroy');
-
-
-
 //Frontend
 use App\Http\Controllers\Frontend\FrontendController;
     
@@ -74,3 +53,27 @@ Route::get('/admin/baocao/donhang/data', [BaoCaoController::class,'donhangData']
 
 Route::get('/lien-he', [FrontendController::class,'contact'])->name('frontend.contact');
 Route::get('/lien-he/goi-loi-nhan', [FrontendController::class ,'sendMailContactForm'])->name('frontend.contact.sendMailContactForm');
+
+
+use App\Http\Controllers\Backend\SanPhamController;
+Route::resource('/admin/sanpham', 'App\Http\Controllers\Backend\SanPhamController', ['as' => 'admin']);
+Route::get('admin/sanpham', [SanphamController::class , 'index'])->name('admin.sanpham.index');
+Route::get('admin/sanpham/create', [SanphamController::class , 'create'])->name('admin.sanpham.create');
+Route::post('admin/sanpham/store', [SanphamController::class , 'store'])->name('admin.sanpham.store');
+Route::get('/admin/sanpham/edit/{id}', [SanphamController::class , 'edit'])->name('admin.sanpham.edit');
+Route::put('/admin/sanpham/edit/{id}', [SanphamController::class , 'update'])->name('admin.sanpham.update');
+Route::get('/admin/sanpham/delete/{id}', [SanphamController::class , 'destroy'])->name('admin.sanpham.destroy');
+Route::get('admin/sanpham/demo/{id}', [FrontendController::class , 'productDemo'])->name('admin.sanpham.demo');
+
+
+use App\Http\Controllers\Backend\LoaiController;
+// route Danh mục Loại Sản phẩm
+// Hàm Route::resource() sẽ tạo toàn bộ các route CRUD theo tiêu chuẩn RestFul API
+Route::get('admin/index',[LoaiController::class , 'index'] )->name('admin.loai.index');
+Route::get('admin/loai/create', [LoaiController::class , 'create'])->name('admin.loai.create');
+Route::post('admin/loai/store', [LoaiController::class , 'store'])->name('admin.loai.store');
+Route::get('/admin/loai/edit/{id}', [LoaiController::class , 'edit'])->name('admin.loai.edit');
+Route::put('/admin/loai/edit/{id}', [LoaiController::class , 'update'])->name('admin.loai.update');
+Route::delete('/admin/loai/delete/{id}', [LoaiController::class , 'destroy'])->name('admin.loai.destroy');
+
+

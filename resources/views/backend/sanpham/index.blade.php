@@ -42,28 +42,38 @@ Danh sách sản phẩm
     <div class="row">
         <div class="col-12">
             <div class="card mb-4">
-                <div class="card-header pb-0">
-                    <h6>Authors table</h6>
+                <div style="justify-content: space-between ; display:flex" class="card-header ">
+                    <div class="header-left">
+                        <h6>Product Management</h6>
+                    </div>
+                    <div class="header-right">
+                        <a href="{{ route('admin.sanpham.create') }}" class="btn btn-primary btn-sm mb-0 w-100" ><i style="padding-right:10px" class="fa fa-plus-square" aria-hidden="true"></i>Add new products</a>
+                    </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th style="width:25px" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">STT</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
-                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                                    <th style="width:15px" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">STT</th>
+                                    <th style="text-align:center" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product ID</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Photo | Product name</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product portfolio</th>
+                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
+                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Historical cost</th>
+                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                              @foreach($danhsachsanpham as $sp)
-                                <tr>
-                                  <td style="width:25px">
-                                    <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->sp_ma }}</h6>
+                              @foreach($danhsachsanpham as $key => $sp)
+                              <tr>
+                                    <td style="width:25px">
+                                      <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $key+1 }}</h6>
+                                  </td>
+                                  <td style="width:25px ; text-align:center">
+                                    <h6  class="text-xs font-weight-bold mb-0">{{ $sp->sp_ma }}</h6>
                                 </td>
                                     <td>
                                         <div class="d-flex px-2 py-1">
@@ -75,22 +85,23 @@ Danh sách sản phẩm
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">Manager</p>
-                                        <p class="text-xs text-secondary mb-0">Organization</p>
+                                    <td style="text-align: center">
+                                        <p class="text-xs font-weight-bold mb-0">{{ $sp->loaisanpham->l_ten }}</p>
                                     </td>
                                     <td style="width:25px" class="align-middle text-center">
-                                      <span class="text-secondary text-xs font-weight-bold">{{ $sp->sp_giaBan }}</span>
+                                      <p  class="text-secondary text-xs font-weight-bold">{{ $sp->sp_giaBan }}<span style="color:red ;font-size:11px ; padding-top:15px ; padding-left:4px">$</span></p>
                                     </td>
                                     <td style="width:25px" class="align-middle text-center">
-                                      <span class="text-secondary text-xs font-weight-bold"><span style="color:red ;font-size:17px ; padding-top:15px ; padding-right:5px">$</span>{{ $sp->sp_giaGoc }}</span>
+                                      <p style="text-decoration: line-through red solid;"class="text-secondary text-xs font-weight-bold">{{ $sp->sp_giaGoc }}<span style="color:red ;font-size:11px ; padding-top:15px ; padding-left:4px">$</span></p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                                        <span class="badge badge-sm bg-gradient-success">Display</span>
                                     </td>
                                     
-                                    <td class="align-middle">
-                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit</a>
+                                    <td style="text-align: center" class="align-middle">
+                                        <a  href="{{ route('admin.sanpham.edit' , $sp ->sp_ma ) }}"class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit  |</a>
+                                        <a  href="{{ route('admin.sanpham.demo' , $sp ->sp_ma ) }}" class="text-secondary font-weight-bold text-xs"><i class="fa fa-television" aria-hidden="true"></i> |</a>
+                                        <a style="color: #f64468" href="{{ route('admin.sanpham.destroy' , $sp ->sp_ma ) }}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="font-weight-bold text-xs">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -109,8 +120,8 @@ Danh sách sản phẩm
                         ©
                         <script>
                             document.write(new Date().getFullYear())
-                        </script>, made with <i class="fa fa-heart"></i> by
-                        <a href="" class="font-weight-bold" target="_blank">Creative Group 5</a> for a better web.
+                        </script>, made with by
+                        <a  class="font-weight-bold" target="_blank">Creative Group 5</a> 
                     </div>
                 </div>
                 <div class="col-lg-6">

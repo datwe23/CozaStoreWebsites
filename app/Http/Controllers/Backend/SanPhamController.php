@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Spatie\FlareClient\Flare;
 use Illuminate\Support\Facades\Storage;
 use App\HinhAnh;
-
 class SanPhamController extends Controller
 {
     /**
@@ -29,8 +28,6 @@ class SanPhamController extends Controller
         return view('backend.sanpham.index')
             // với dữ liệu truyền từ Controller qua View, được đặt tên là `danhsachsanpham`
             ->with('danhsachsanpham', $ds_sanpham);
-
-
     }
 
     /**
@@ -242,7 +239,6 @@ class SanPhamController extends Controller
       foreach ($sp->hinhanhlienquan()->get() as $hinhAnh) {
           // Xóa hình cũ để tránh rác 
           Storage::delete('public/photos/' . $hinhAnh->ha_ten);
-
           // Xóa record 
           $hinhAnh->delete();
       }

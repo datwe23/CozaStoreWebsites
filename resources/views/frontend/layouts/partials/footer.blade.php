@@ -110,30 +110,8 @@
         </div>
 
         <div class="p-t-40">
-            <div class="flex-c-m flex-w p-b-18">
-                <a href="#" class="m-all-1">
-                    <img src="{{ asset('themes/cozastore/images/icons/icon-pay-01.png') }}" alt="ICON-PAY">
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img src="{{ asset('themes/cozastore/images/icons/icon-pay-02.png') }}" alt="ICON-PAY">
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img src="{{ asset('themes/cozastore/images/icons/icon-pay-03.png') }}" alt="ICON-PAY">
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img src="{{ asset('themes/cozastore/images/icons/icon-pay-04.png') }}" alt="ICON-PAY">
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img src="{{ asset('themes/cozastore/images/icons/icon-pay-05.png') }}" alt="ICON-PAY">
-                </a>
-            </div>
-
             <p style="" class="stext-107 cl6 txt-center">
-                Copyright © 2022 All rights reserved | This is the website of CozaStore 
+                Copyright © 2022 All copyrights belong to CozaStore
             </p>
         </div>
     </div>

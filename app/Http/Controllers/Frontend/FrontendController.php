@@ -248,4 +248,26 @@ public function sendMailContactForm(Request $request)
     return $input;
 }
 
+public function productDemo(Request $request, $id)
+{
+    $sanpham = SanPham::find($id);
+    // Query Lấy các hình ảnh liên quan của các Sản phẩm đã được lọc
+    $danhsachhinhanhlienquan = DB::table('cusc_hinhanh')
+                            ->where('sp_ma', $id)
+                            ->get();
+
+    // Query danh sách Loại
+    $danhsachloai = Loai::all();
+    // Query danh sách màu
+    $danhsachmau = Mau::all();
+    $danhsachsanpham = $this->seaSanPham($request);
+    return view('backend.sanpham.demo')
+        ->with('danhsachsanpham', $danhsachsanpham)
+        ->with('sp', $sanpham)
+        ->with('danhsachhinhanhlienquan', $danhsachhinhanhlienquan)
+        ->with('danhsachmau', $danhsachmau)
+        ->with('danhsachloai', $danhsachloai);
 }
+}
+
+

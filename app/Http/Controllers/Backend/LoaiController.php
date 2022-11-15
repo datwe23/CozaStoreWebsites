@@ -18,14 +18,10 @@ class LoaiController extends Controller
          // Sử dụng Eloquent Model để truy vấn dữ liệu
     $danhsachsanpham = Loai::all(); // SELECT * FROM loaisanpham
 
-    // Đường dẫn đến view được quy định như sau: <FolderName>.<ViewName>
-    // Mặc định đường dẫn gốc của method view() là thư mục `resources/views`
-    // Hiển thị view `backend.loai.index`
     return  view('backend.loai.index', compact("danhsachsanpham"));
     }
 
     /**
-     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */

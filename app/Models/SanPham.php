@@ -21,11 +21,11 @@ class SanPham extends Model
 
     public function loaisanpham()
     {
-        return $this->belongsTo('App\Loai', 'l_ma', 'l_ma');
+        return $this->belongsTo('App\Models\Loai', 'l_ma', 'l_ma');
     }
 
     public function hinhanhlienquan()
     {
-        return $this->hasMany('App\HinhAnh', 'sp_ma', 'sp_ma');
+        return $this->hasMany('App\Models\HinhAnh', 'sp_ma', 'sp_ma');
     }
 }
