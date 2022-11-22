@@ -1,120 +1,50 @@
-<!-- Shoping Cart -->
-<form class="bg0 p-t-75 p-b-85 ngCart cart">
-    <div class="container">
-        <div class="row" ng-show="ngCart.getTotalItems() === 0">
-            <div class="col-lg-12 col-md-12">
-                <div class="alert alert-warning" role="alert">
-                    Giỏ hàng trống ffzssssss
-                </div>
-            </div>
-        </div>
-
-        <div class="row" ng-show="ngCart.getTotalItems() > 0">
-            <div style="margin:0;padding:0" class="col-lg-12 col-xl-7 m-lr-auto m-b-50">
-                <div style="margin:0;padding:0" class="m-l-25 m-r--38 m-lr-0-xl">
-                    <div class="wrap-table-shopping-cart">
-                        <table class="table-shopping-cart">
-                            <tr style="text-align: center;" class="table_head">
-                                <th style="text-align: center;padding:15px" class="column-1">Image</th>
-                                <th style="width:200px " class="column-2">Name</th>
-                                <th style="text-align: center;" class="column-3">Unit price</th>
-                                <th style="text-align: center;" class="column-4">Quantity</th>
-                                <th style="text-align: center;" class="column-5">Into money</th>
-                                <th style="padding-right:15px ;" class="column-6">Action</th>
-                            </tr>
-
-                            <tr style="height:70px" class=" table_row " ng-repeat="item in ngCart.getCart().items track by $index ">
-                                <td style="padding:15px " class="column-1 ">
-                                    <div style="margin:15px " class="how-itemcart1 ">
-                                        <img src="<% item.getData().sp_hinh_url %>" alt="IMG">
-                                    </div>
-                                </td>
-                                <td style="width:200px;font-size: 13px;" class="column-2">
-                                    <% item.getName() %>
-                                </td>
-                                <td style="font-size:13px ; text-align: center;" class="column-3">
-                                    <% item.getPrice() | currency %>
-                                </td>
-                                <td style="text-align:center ; font-size: 13px;" class="column-4">
-                                    <% item.getQuantity() | number %>
-                                </td>
-                                <td class="column-5" style="text-align: center ;font-size: 13px; ">
-                                    <% item.getTotal() | currency %>
-                                </td>
-                                <td><span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove remove"><i style="justify-content: center;display: flex;" class="fa fa-minus-square" aria-hidden="true"></i></span></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-10 col-lg-5 col-xl-5 m-lr-auto m-b-50">
-                <div style="margin:0 ; padding:12px 70px" class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
-                    <h4 style="font-size: 25px;" class="mtext-109 cl2 p-b-30">
-                        Cart billing
-                    </h4>
-
-                    <div style="padding-top:0" class="flex-w flex-t p-t-27 p-b-33">
-                        <!-- Thuế -->
-                        <div class="size-208" ng-show="ngCart.getTax()">
-                            <span class="mtext-101 cl2">
-                                Tax(<% ngCart.getTaxRate() %>%):
-                            </span>
-                        </div>
-
-                        <div class="size-209 p-t-1" ng-show="ngCart.getTax()">
-                            <span class="mtext-110 cl2">
-                                <% ngCart.getTax() | currency %>
-                            </span>
-                        </div>
-
-                        <!-- Vận chuyển -->
-                        <div class="size-208" ng-show="ngCart.getShipping()">
-                            <span class="mtext-101 cl2">
-                                Transfer
-                            </span>
-                        </div>
-
-                        <div class="size-209 p-t-1" ng-show="ngCart.getShipping()">
-                            <span class="mtext-110 cl2">
-                                <% ngCart.getShipping() | currency %>
-                            </span>
-                        </div>
-
-                        <!-- Tổng thành tiền -->
-                        <div class="size-208">
-                            <span style="font-size: 14px;" class="mtext-101 cl2">
-                                Total money:
-                            </span>
-                        </div>
-
-                        <div class="size-209 p-t-1">
-                            <span class="mtext-110 cl2">
-                                <% ngCart.totalCost() | currency %>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">Your cart</span>
+    <span>
+        <div style="width:30px ; border-radius:100%;" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="<% ngCart.getTotalItems() %>">
+</div>
+    </span>
+</h4>
+<form style="padding:0" class="bg0 p-t-75 p-b-85 ngCart cart">
+    <div class="row" ng-show="ngCart.getTotalItems() === 0">
+        <div class="col-lg-12 col-md-12">
+            <div class="alert alert-warning" role="alert">
+                Giỏ hàng trống
             </div>
         </div>
     </div>
-</form>
 
-<style>
-    .ngCart.cart span[ng-click] {
-        cursor: pointer;
-    }
-    
-    .ngCart.cart .glyphicon.disabled {
-        color: #aaa;
-    }
-    
-    .ngCart.cart .title {
-        color: blue;
-        font-weight: bold;
-    }
-    
-    .ngCart.cart .remove {
-        color: red;
-    }
-</style>
+    <div style="border: 1px #a2a5a888 solid;margin-bottom:10px" class="card p-2 ">
+        <div class="input-group ">
+            <a href="{{ route('frontend.cart') }}" style="background-color: #717fe0; color:#fff ; margin-left:15px" class="btn "><i style="padding-right:7px" class="fa fa-angle-double-left" aria-hidden="true"></i>Back to cart page<i style="padding-left: 10px;" class="fa fa-shopping-basket" aria-hidden="true"></i></a>
+
+        </div>
+    </div>
+
+    <div ng-show="ngCart.getTotalItems() > 0" class="list-group mb-3">
+        <ul style="margin-bottom:3px" ng-repeat="item in ngCart.getCart().items track by $index ">
+            <li style="border : 1px #a2a5a888 solid" class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                    <h6 class="my-0">
+                        <% item.getName() %>
+                    </h6>
+                    <small class="text-muted">  Number : <% item.getQuantity() | number %></small>
+                </div>
+                <span class="text-muted"><% item.getPrice() | currency %></span>
+            </li>
+        </ul>
+        <div style="border : 1px #a2a5a888 solid" class="list-group-item d-flex justify-content-between">
+            <span>Total (USD)</span>
+            <strong><% ngCart.totalCost() | currency %></strong>
+        </div>
+    </div>
+</form>
+<form style="border: 1px #a2a5a888 solid;" class="card p-2 ">
+    <div class="input-group ">
+        <input type="text " class="form-control " placeholder="Promo code ">
+        <div class="input-group-append ">
+            <button type="submit " class="btn btn-secondary ">Redeem</button>
+        </div>
+    </div>
+</form>
+</div>

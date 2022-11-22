@@ -78,7 +78,7 @@ Danh sách sản phẩm
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div>
-                                                <img src="{{ asset('storage/photos/' . $sp->sp_hinh) }}" class="avatar avatar-sm me-3" alt="user1">
+                                                <img src="{{ asset('photos/' . $sp->sp_hinh) }}" class="avatar avatar-sm me-3" alt="{{ $sp->sp_hinh }}">
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <p class="text-xs text-secondary mb-0">{{ $sp->sp_ten }}</p>
@@ -95,7 +95,7 @@ Danh sách sản phẩm
                                       <p style="text-decoration: line-through red solid;"class="text-secondary text-xs font-weight-bold">{{ $sp->sp_giaGoc }}<span style="color:red ;font-size:11px ; padding-top:15px ; padding-left:4px">$</span></p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        <span class="badge badge-sm bg-gradient-success">Display</span>
+                                        <span class="badge badge-sm bg-gradient-success">{{ $sp->sp_trangThai }}</span>
                                     </td>
                                     
                                     <td style="text-align: center" class="align-middle">

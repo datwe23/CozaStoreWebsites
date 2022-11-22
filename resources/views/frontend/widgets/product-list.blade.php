@@ -236,7 +236,7 @@
                 <!-- Block2 -->
                 <div class="block2">
                     <div class="block2-pic hov-img0">
-                        <img src="{{ asset('storage/photos/' . $sp->sp_hinh) }}" alt="IMG-PRODUCT">
+                        <img src="{{ asset('photos/' . $sp->sp_hinh) }}" alt="IMG-PRODUCT">
 
                         <a style="" href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal" data-sp-ma="{{ $sp->sp_ma }}">
                            Quick view <i style="padding-left:10px" class="fa fa-arrows-alt" aria-hidden="true"></i>  

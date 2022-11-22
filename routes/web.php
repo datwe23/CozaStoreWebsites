@@ -37,7 +37,7 @@ Route::group(['prefix' => 'home'], function () {
 
     Route::get('Cart', [FrontendController::class , 'cart'])->name('frontend.cart');
     
-    Route::get('Checkout', [FrontendController::class , 'checkout'])->name('frontend.cart');
+    Route::get('Checkout', [FrontendController::class , 'checkout'])->name('frontend.checkout');
 
     Route::post('Order', [FrontendController::class ,'order'] )->name('frontend.order');
 
@@ -67,6 +67,9 @@ Route::get('admin/sanpham/demo/{id}', [FrontendController::class , 'productDemo'
 
 
 use App\Http\Controllers\Backend\LoaiController;
+use App\Http\Controllers\LoaifController;
+Route::get('admins',[LoaifController::class , 'index'] )->name('admin.loai.index');
+
 // route Danh mục Loại Sản phẩm
 // Hàm Route::resource() sẽ tạo toàn bộ các route CRUD theo tiêu chuẩn RestFul API
 Route::get('admin/index',[LoaiController::class , 'index'] )->name('admin.loai.index');
@@ -75,5 +78,3 @@ Route::post('admin/loai/store', [LoaiController::class , 'store'])->name('admin.
 Route::get('/admin/loai/edit/{id}', [LoaiController::class , 'edit'])->name('admin.loai.edit');
 Route::put('/admin/loai/edit/{id}', [LoaiController::class , 'update'])->name('admin.loai.update');
 Route::delete('/admin/loai/delete/{id}', [LoaiController::class , 'destroy'])->name('admin.loai.destroy');
-
-
