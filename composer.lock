@@ -1092,6 +1092,9 @@
         {
             "name": "laravel/framework",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f747cc8665c5ee94e78db9df339c346333e908eb
             "version": "v9.41.0",
             "source": {
                 "type": "git",
@@ -1102,6 +1105,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/cc902ce61b4ca08ca7449664cfab2fa96a1d1e28",
                 "reference": "cc902ce61b4ca08ca7449664cfab2fa96a1d1e28",
+<<<<<<< HEAD
 =======
             "version": "v9.40.1",
             "source": {
@@ -1114,6 +1118,8 @@
                 "url": "https://api.github.com/repos/laravel/framework/zipball/9611fdaf2db5759b8299802d7185bcdbee0340bb",
                 "reference": "9611fdaf2db5759b8299802d7185bcdbee0340bb",
 >>>>>>> origin/nhanh1
+=======
+>>>>>>> f747cc8665c5ee94e78db9df339c346333e908eb
                 "shasum": ""
             },
             "require": {
@@ -1287,10 +1293,14 @@
                 "source": "https://github.com/laravel/framework"
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-11-22T15:10:46+00:00"
 =======
             "time": "2022-11-15T16:13:22+00:00"
 >>>>>>> origin/nhanh1
+=======
+            "time": "2022-11-22T15:10:46+00:00"
+>>>>>>> f747cc8665c5ee94e78db9df339c346333e908eb
         },
         {
             "name": "laravel/sanctum",
@@ -6727,6 +6737,9 @@
         {
             "name": "laravel/breeze",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f747cc8665c5ee94e78db9df339c346333e908eb
             "version": "v1.15.2",
             "source": {
                 "type": "git",
@@ -6737,6 +6750,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/breeze/zipball/08ca3c51a95ec70b98ce8d3eab4f810018dff205",
                 "reference": "08ca3c51a95ec70b98ce8d3eab4f810018dff205",
+<<<<<<< HEAD
 =======
             "version": "v1.15.1",
             "source": {
@@ -6749,6 +6763,8 @@
                 "url": "https://api.github.com/repos/laravel/breeze/zipball/0d766ce7ada620586e6c27553d990f337df4af3f",
                 "reference": "0d766ce7ada620586e6c27553d990f337df4af3f",
 >>>>>>> origin/nhanh1
+=======
+>>>>>>> f747cc8665c5ee94e78db9df339c346333e908eb
                 "shasum": ""
             },
             "require": {
@@ -6797,10 +6813,14 @@
                 "source": "https://github.com/laravel/breeze"
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-11-21T12:48:15+00:00"
 =======
             "time": "2022-11-15T16:43:30+00:00"
 >>>>>>> origin/nhanh1
+=======
+            "time": "2022-11-21T12:48:15+00:00"
+>>>>>>> f747cc8665c5ee94e78db9df339c346333e908eb
         },
         {
             "name": "laravel/pint",

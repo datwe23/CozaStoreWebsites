@@ -73,6 +73,7 @@ Route::get('/admin/loai/edit/{id}', [LoaiController::class , 'edit'])->name('adm
 Route::put('/admin/loai/edit/{id}', [LoaiController::class , 'update'])->name('admin.loai.update');
 Route::delete('/admin/loai/delete/{id}', [LoaiController::class , 'destroy'])->name('admin.loai.destroy');
 
+<<<<<<< HEAD
 use App\Http\Controllers\DonHangController;
 
 Route::get('admin/donhang',[DonHangController::class , 'index'] )->name('admin.donhang.index');
@@ -90,3 +91,30 @@ Route::get('registration', [AuthController::class, 'registration'])->name('regis
 Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
 Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard'); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+=======
+use App\Http\Controllers\KhachHangController;
+Route::get('admin/customer', [KhachHangController::class, 'index'])->name('customer.index');
+Route::get('admin/customer/create', [KhachHangController::class, 'create'])->name('customer.create');
+Route::get('admin/customer/delete/{id}', [KhachHangController::class, 'destroy'])->name('customer.destroy');
+Route::get('admin/customer/edit/{id}', [KhachHangController::class, 'edit'])->name('customer.edit');
+Route::post('admin/customer/update/{id}', [KhachHangController::class, 'update'])->name('customer.update');
+Route::get('admin/customer/show/{id}', [KhachHangController::class, 'show'])->name('customer.show');
+Route::post('admin/customer/store', [KhachHangController::class, 'store'])->name('customer.store');
+
+use App\Http\Controllers\NhanVienController;
+Route::get('admin/nhanvien', [NhanVienController::class, 'index'])->name('nhanvien.index');
+Route::get('admin/nhanvien/create', [NhanVienController::class, 'create'])->name('nhanvien.create');
+Route::get('admin/nhanvien/delete/{id}', [NhanVienController::class, 'destroy'])->name('nhanvien.destroy');
+Route::get('admin/nhanvien/edit/{id}', [NhanVienController::class, 'edit'])->name('nhanvien.edit');
+Route::post('admin/nhanvien/update/{id}', [NhanVienController::class, 'update'])->name('nhanvien.update');
+Route::get('admin/nhanvien/show/{id}', [NhanVienController::class, 'show'])->name('nhanvien.show');
+Route::post('admin/nhanvien/store', [NhanVienController::class, 'store'])->name('nhanvien.store');
+
+use App\Http\Controllers\MauController;
+Route::get('admin/color', [MauController::class, 'index'])->name('color.index');
+Route::get('admin/color/create', [MauController::class, 'create'])->name('color.create');
+Route::get('admin/color/delete/{id}', [MauController::class, 'destroy'])->name('color.destroy');
+Route::get('admin/color/edit/{id}', [MauController::class, 'edit'])->name('color.edit');
+Route::post('admin/color/update/{id}', [MauController::class, 'update'])->name('color.update');
+Route::post('admin/color/store', [MauController::class, 'store'])->name('color.store');
+>>>>>>> f747cc8665c5ee94e78db9df339c346333e908eb
