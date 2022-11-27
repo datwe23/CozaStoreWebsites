@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\DonHang;
 use App\Models\ThanhToan;
 use App\Models\VanChuyen;
-use App\Models\KhachHang   ;
 class DonHangController extends Controller
 {
     public function index ()

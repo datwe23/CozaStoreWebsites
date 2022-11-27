@@ -1,0 +1,32 @@
+
+create
+->with('success', 'Product create successfully');
+
+
+edit
+->with('successcreate', 'Product updated successfully');
+
+delete
+->with('successdelete', 'Product delete successfully');
+
+
+                        @if ($message = Session::get('success'))
+                        <div style="background-color: #4d66f5d7;padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;" class="alert alert-dismissible">
+                            <button style=""type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <p style="padding-left: 2px">{{ $message }}</p>
+                        </div>
+                        @endif
+
+                        @if ($message = Session::get('successcreate'))
+                        <div style="background-color: #2dce89;color:padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;" class="alert alert-dismissible">
+                            <button style=""type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <p style="padding-left: 2px">{{ $message }}</p>
+                        </div>
+                        @endif
+
+                        @if ($message = Session::get('successdelete'))
+                        <div style="background-color: #f44168;padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;" class="alert alert-dismissible">
+                            <button style=""type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <p style="padding-left: 2px">{{ $message }}</p>
+                        </div>
+                        @endif

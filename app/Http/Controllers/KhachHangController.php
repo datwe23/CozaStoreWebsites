@@ -48,7 +48,7 @@ class KhachHangController extends Controller
             $newCustomer->kh_trangThai = $request->kh_trangThai;
             $newCustomer->save();
             return redirect()->route('customer.index')
-                ->with('success','Account created successfully !!!');
+                ->with('success', 'Product create successfully');
         }
     }
     public function show($id)
@@ -88,7 +88,8 @@ class KhachHangController extends Controller
                 $customers->kh_trangThai = $request->kh_trangThai;
                 $customers->save();
                 return redirect()->route('customer.index')
-                    ->with('success','Account updated successfully !!!');
+                ->with( 'successcreate', 'Product updated successfully');
+
             }
             else{
                 return redirect()->route('customer.index')
@@ -100,6 +101,8 @@ class KhachHangController extends Controller
     {
         $customers = KhachHang::find($id);
         $customers->delete();
-        return redirect()->route('customer.index')->with('success', 'Customer deleted successfully');
+        return redirect()->route('customer.index')
+        ->with( 'successdelete', 'Product delete successfully');
+
     }
 }

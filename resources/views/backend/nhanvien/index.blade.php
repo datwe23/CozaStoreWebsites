@@ -50,6 +50,27 @@ Danh sách Nhan Vien
                         <a href="{{ route('nhanvien.create') }}" class="btn btn-primary btn-sm mb-0 w-100" ><i style="padding-right:10px" class="fa fa-plus-square" aria-hidden="true"></i>Add new employee</a>
                     </div>
                 </div>
+                        @if ($message = Session::get('success'))
+                        <div style="background-color: #4d66f5d7;padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;" class="alert alert-dismissible">
+                            <button style=""type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <p style="padding-left: 2px">{{ $message }}</p>
+                        </div>
+                        @endif
+
+                        @if ($message = Session::get('successcreate'))
+                        <div style="background-color: #2dce89;color:padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;" class="alert alert-dismissible">
+                            <button style=""type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <p style="padding-left: 2px">{{ $message }}</p>
+                        </div>
+                        @endif
+
+                        @if ($message = Session::get('successdelete'))
+                        <div style="background-color: #f44168;padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;" class="alert alert-dismissible">
+                            <button style=""type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <p style="padding-left: 2px">{{ $message }}</p>
+                        </div>
+                        @endif
+
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">

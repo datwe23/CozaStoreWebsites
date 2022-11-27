@@ -27,7 +27,7 @@
                         </div>
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
-                </li>
+                </li>                
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.sanpham.index') }}">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -36,65 +36,53 @@
                         <span class="nav-link-text ms-1">Product Manager</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../pages/tables.html">
+
+                                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.loai.index') }}">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Category Manager</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="../pages/billing.html">
+
+                                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.donhang.index') }}">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+                            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Billing</span>
+                        <span class="nav-link-text ms-1">Order Manager</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="../pages/virtual-reality.html">
+
+                                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('customer.index') }}">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-app text-info text-sm opacity-10"></i>
+                            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Virtual Reality</span>
+                        <span class="nav-link-text ms-1">Customer Manager</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="../pages/rtl.html">
+
+                                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('nhanvien.index') }}">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
+                            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">RTL</span>
+                        <span class="nav-link-text ms-1">Staff Manager</span>
                     </a>
                 </li>
-                <li class="nav-item mt-3">
-                    <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="../pages/profile.html">
+
+                                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('color.index') }}">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+                            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Profile</span>
+                        <span class="nav-link-text ms-1">Color Product Manager</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="../pages/sign-in.html">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Sign In</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="../pages/sign-up.html">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-collection text-info text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Sign Up</span>
-                    </a>
-                </li>
+
+
             </ul>
         </div>
         <div class="sidenav-footer mx-3 ">

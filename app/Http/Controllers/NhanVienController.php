@@ -13,26 +13,27 @@ class NhanVienController extends Controller
         $nhanviens = NhanVien::latest()->paginate(10);
 
         return view('backend.nhanvien.index', compact('nhanviens'))
-            ->with('i', (request()->input('page, 1') - 1) * 5);           
+            ->with('i', (request()->input('page, 1') - 1) * 5);
     }
     public function create(Request $request)
     {
-         return view('backend.nhanvien.create');
-}
-    
+        return view('backend.nhanvien.create');
+    }
+
     public function store(Request $request)
     {
-        if ($request -> isMethod('POST')){
+        
+        if ($request->isMethod('POST')) {
             $validator = Validator::make($request->all(), [
                 'nv_taiKhoan' => 'required',
                 'nv_matKhau' => 'required',
                 'nv_email' => 'required'
-                ]);
-                if ($validator->fails()) {
+            ]);
+            if ($validator->fails()) {
                 return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-                }
+                    ->withErrors($validator)
+                    ->withInput();
+            }
             $newNhanVien = new NhanVien();
             $newNhanVien->nv_ma = $request->nv_ma;
             $newNhanVien->nv_taiKhoan = $request->nv_taiKhoan;
@@ -46,7 +47,7 @@ class NhanVienController extends Controller
             $newNhanVien->nv_trangThai = $request->nv_trangThai;
             $newNhanVien->save();
             return redirect()->route('nhanvien.index')
-                ->with('success','Account created successfully !!!');
+                ->with('success', 'Product create successfully');
         }
     }
     public function show($id)
@@ -62,42 +63,41 @@ class NhanVienController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'nv_hoTen' => 'required' ,
+            'nv_hoTen' => 'required',
             'nv_taiKhoan' => 'required',
             'nv_matKhau' => 'required',
             'nv_email' => 'required'
-            ]);
-            if ($validator->fails()) {
+        ]);
+        if ($validator->fails()) {
             return redirect()->back()
-            ->withErrors($validator)
-            ->withInput();
-            }
-            $nhanviens = NhanVien::find($id);
-            if ($nhanviens != null) {
-                $nhanviens->nv_ma = $request->nv_ma;
-                $nhanviens->nv_taiKhoan = $request->nv_taiKhoan;
-                $nhanviens->nv_matKhau = $request->nv_matKhau;
-                $nhanviens->nv_hoTen = $request->nv_hoTen;
-                $nhanviens->nv_gioiTinh = $request->nv_gioiTinh;
-                $nhanviens->nv_email = $request->nv_email;
-                $nhanviens->nv_ngaySinh = $request->nv_ngaySinh;
-                $nhanviens->nv_diaChi = $request->nv_diaChi;
-                $nhanviens->nv_dienThoai = $request->nv_dienThoai;
-                $nhanviens->nv_trangThai = $request->nv_trangThai;
-                $nhanviens->save();
-                return redirect()->route('nhanvien.index')
-                    ->with('success','Account updated successfully !!!');
-            }
-            else{
-                return redirect()->route('nhanvien.index')
-                ->with('Error','Account could not be updated.');
-            }
-        
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $nhanviens = NhanVien::find($id);
+        if ($nhanviens != null) {
+            $nhanviens->nv_ma = $request->nv_ma;
+            $nhanviens->nv_taiKhoan = $request->nv_taiKhoan;
+            $nhanviens->nv_matKhau = $request->nv_matKhau;
+            $nhanviens->nv_hoTen = $request->nv_hoTen;
+            $nhanviens->nv_gioiTinh = $request->nv_gioiTinh;
+            $nhanviens->nv_email = $request->nv_email;
+            $nhanviens->nv_ngaySinh = $request->nv_ngaySinh;
+            $nhanviens->nv_diaChi = $request->nv_diaChi;
+            $nhanviens->nv_dienThoai = $request->nv_dienThoai;
+            $nhanviens->nv_trangThai = $request->nv_trangThai;
+            $nhanviens->save();
+            return redirect()->route('nhanvien.index')
+                ->with('successcreate', 'Product updated successfully');
+        } else {
+            return redirect()->route('nhanvien.index')
+                ->with('Error', 'Account could not be updated.');
+        }
     }
     public function destroy($id)
     {
         $nhanviens = NhanVien::find($id);
         $nhanviens->delete();
-        return redirect()->route('nhanvien.index')->with('success', 'Account deleted successfully');
+        return redirect()->route('nhanvien.index')
+            ->with('successdelete', 'Product delete successfully');
     }
 }

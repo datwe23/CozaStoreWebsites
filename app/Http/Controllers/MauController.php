@@ -38,7 +38,8 @@ class MauController extends Controller
             $newColor->m_trangThai = $request->m_trangThai;
             $newColor->save();
             return redirect()->route('color.index')
-                ->with('success','Color created successfully !!!');
+            ->with('success', 'Product create successfully');
+
         }
     }
     public function edit($id)
@@ -68,7 +69,9 @@ class MauController extends Controller
             }
             else{
                 return redirect()->route('color.index')
-                ->with('Error','Color could not be updated.');
+
+            ->with( 'successcreate', 'Product updated successfully');
+
             }
         
     }
@@ -76,6 +79,8 @@ class MauController extends Controller
     {
         $colors = Mau::find($id);
         $colors->delete();
-        return redirect()->route('color.index')->with('success', 'color deleted successfully');
+        return redirect()->route('color.index')
+        ->with( 'successdelete', 'Product delete successfully');
+
     }
 }

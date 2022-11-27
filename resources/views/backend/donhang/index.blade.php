@@ -81,20 +81,66 @@ Danh sách sản phẩm
                                             </div>
                                         
                                     </td>
-                                        <td style="width:25px">
-                                            <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->dh_daThanhToan }}</h6>
-                                        </td>
 
-                                        <td style="width:25px">
+                                        <td class="align-middle text-center text-sm">
+
+                                        <?php
+                                            if($sp->dh_daThanhToan==1){
+                                                ?>
+                                                <span class="badge badge-sm bg-gradient-success">
+                                                <?php
+                                                echo 'Paid';
+                                                ?>
+                                                </span>
+                                                <?php
+                                            } 
+                                            else{
+                                                ?>
+                                                <span style="background-color:#f44168" class="badge badge-sm">
+                                                <?php
+                                                echo 'Unpaid ';
+                                                ?>
+                                                 </span>
+                                                <?php
+                                            }
+                                        ?>
+
+                                        </span>
+                                    </td>
+
+                                        <td style="width:25px ; text-align:center" >
                                             <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->Vanchuyen->vc_ten }}</h6>
                                         </td>
 
                                         <td style="width:25px">
                                             <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->ThanhToan->tt_ten }}</h6>
                                         </td>
-                                        <td style="width:25px">
-                                            <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->dh_trangThai }}</h6>
-                                        </td>
+
+                                        <td class="align-middle text-center text-sm">
+
+                                        <?php
+                                            if($sp->dh_trangThai==1){
+                                                ?>
+                                                <span class="badge badge-sm bg-gradient-success">
+                                                <?php
+                                                echo 'ACTIVE';
+                                                ?>
+                                                </span>
+                                                <?php
+                                            } 
+                                            else{
+                                                ?>
+                                                <span style="background-color:#f44168" class="badge badge-sm">
+                                                <?php
+                                                echo 'HIDDEN ';
+                                                ?>
+                                                 </span>
+                                                <?php
+                                            }
+                                        ?>
+
+                                        </span>
+                                    </td>
                                         <td style="text-align: center" class="align-middle">
                                         <a  href="{{ route('admin.donhang.edit' , $sp ->dh_ma ) }}"class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit  |</a>
                                         <a  href="{{ route('admin.donhang.show' , $sp ->dh_ma ) }}" class="text-secondary font-weight-bold text-xs"><i class="fa fa-television" aria-hidden="true"></i> |</a>
