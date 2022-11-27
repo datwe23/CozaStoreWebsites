@@ -44,7 +44,7 @@ Route::group(['prefix' => 'home'], function () {
     Route::get('Order/checkout', [FrontendController::class,'orderFinish'])->name('frontend.orderFinish');
 });
 
-Route::delete('/admin/sanpham/delete/{id}', [SanphamController::class , 'destroy'])->name('admin.sanpham.destroy');
+//Route::delete('/admin/sanpham/delete/{id}', [SanphamController::class , 'destroy'])->name('admin.sanpham.destroy');
 
 use App\Http\Controllers\Backend\BaoCaoController;
 // Tạo route Báo cáo Đơn hàng
@@ -75,5 +75,13 @@ Route::post('admin/loai/store', [LoaiController::class , 'store'])->name('admin.
 Route::get('/admin/loai/edit/{id}', [LoaiController::class , 'edit'])->name('admin.loai.edit');
 Route::put('/admin/loai/edit/{id}', [LoaiController::class , 'update'])->name('admin.loai.update');
 Route::delete('/admin/loai/delete/{id}', [LoaiController::class , 'destroy'])->name('admin.loai.destroy');
+
+use App\Http\Controllers\DonHangController;
+
+Route::get('admin/donhang',[DonHangController::class , 'index'] )->name('admin.donhang.index');
+Route::get('/admin/donhang/delete/{id}', [DonHangController::class , 'delete'])->name('admin.donhang.delete');
+Route::get('/admin/donhang/edit/{id}', [DonHangController::class , 'edit'])->name('admin.donhang.edit');
+Route::post('/admin/donhang/editpost/{id}', [DonHangController::class , 'update'])->name('admin.donhang.update');
+Route::get('/admin/donhang/show/{id}', [DonHangController::class , 'show'])->name('admin.donhang.show');
 
 

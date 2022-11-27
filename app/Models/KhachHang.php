@@ -20,4 +20,9 @@ class KhachHang extends Model
 
     protected $dates        = ['kh_ngaySinh', 'kh_taoMoi', 'kh_capNhat'];
     protected $dateFormat   = 'Y-m-d H:i:s';
+    
+    public function DonHang()
+    {
+        return $this->belongsto('App\Models\DonHang','dh_ma');
+    }
 }

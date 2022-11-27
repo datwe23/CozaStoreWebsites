@@ -130,7 +130,7 @@ Danh sách sản phẩm
                           </div>
                         </div>
                         <div style="text-align: center ; padding-top:30px" class="form-group">
-                           <button style="width:70% ; text-align:center"  type="submit" class="btn btn-primary">Lưu</button>
+                           <button style="width:70% ; text-align:center"  type="submit" class="btn btn-primary">ADD</button>
                         </div>
 
                       </form>

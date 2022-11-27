@@ -19,4 +19,9 @@ class ThanhToan extends Model
     protected $dates        = ['tt_taoMoi', 'tt_capNhat'];
     protected $dateFormat   = 'Y-m-d H:i:s';
     use HasFactory;
+
+    public function DonHang()
+    {
+        return $this->belongsto('App\Models\DonHang','dh_ma');
+    }
 }

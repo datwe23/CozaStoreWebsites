@@ -46,9 +46,7 @@ Danh sách sản phẩm
                     <div class="header-left">
                         <h6>Product Management</h6>
                     </div>
-                    <div class="header-right">
-                        <a href="{{ route('admin.sanpham.create') }}" class="btn btn-primary btn-sm mb-0 w-100" ><i style="padding-right:10px" class="fa fa-plus-square" aria-hidden="true"></i>Add new products</a>
-                    </div>
+    
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -56,52 +54,51 @@ Danh sách sản phẩm
                             <thead>
                                 <tr>
                                     <th style="width:15px" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">STT</th>
-                                    <th style="text-align:center" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product ID</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Photo | Product name</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product portfolio</th>
-                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
-                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Historical cost</th>
+                                    <th style="text-align:center" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Order ID</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Customer Name</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Condition</th>
+                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Shipping Methods</th>
+                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Payment</th>
                                     <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                                     <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                              @foreach($danhsachsanpham as $key => $sp)
+                              @foreach($DonHang as $key => $sp)
                               <tr>
                                     <td style="width:25px">
                                       <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $key+1 }}</h6>
                                   </td>
                                   <td style="width:25px ; text-align:center">
-                                    <h6  class="text-xs font-weight-bold mb-0">{{ $sp->sp_ma }}</h6>
+                                    <h6  class="text-xs font-weight-bold mb-0">{{ $sp->dh_ma }}</h6>
                                 </td>
-                                    <td>
-                                        <div class="d-flex px-2 py-1">
-                                            <div>
-                                                <img src="{{ asset('photos/' . $sp->sp_hinh) }}" class="avatar avatar-sm me-3" alt="user1">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <p class="text-xs text-secondary mb-0">{{ $sp->sp_ten }}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td style="text-align: center">
-                                        <p class="text-xs font-weight-bold mb-0">{{ $sp->loaisanpham->l_ten }}</p>
-                                    </td>
-                                    <td style="width:25px" class="align-middle text-center">
-                                      <p  class="text-secondary text-xs font-weight-bold">{{ $sp->sp_giaBan }}<span style="color:red ;font-size:11px ; padding-top:15px ; padding-left:4px">$</span></p>
-                                    </td>
-                                    <td style="width:25px" class="align-middle text-center">
-                                      <p style="text-decoration: line-through red solid;"class="text-secondary text-xs font-weight-bold">{{ $sp->sp_giaGoc }}<span style="color:red ;font-size:11px ; padding-top:15px ; padding-left:4px">$</span></p>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <span class="badge badge-sm bg-gradient-success">Display</span>
-                                    </td>
                                     
-                                    <td style="text-align: center" class="align-middle">
-                                        <a  href="{{ route('admin.sanpham.edit' , $sp ->sp_ma ) }}"class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit  |</a>
-                                        <a  href="{{ route('admin.sanpham.demo' , $sp ->sp_ma ) }}" class="text-secondary font-weight-bold text-xs"><i class="fa fa-television" aria-hidden="true"></i> |</a>
-                                        <a style="color: #f64468" href="{{ route('admin.sanpham.destroy' , $sp ->sp_ma ) }}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="font-weight-bold text-xs">Delete</a>
+                                        
+                                        <td>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <p class="text-xs text-secondary mb-0">{{$sp->KhachHang->kh_hoTen}}</p>
+                                            </div>
+                                        
+                                    </td>
+                                        <td style="width:25px">
+                                            <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->dh_daThanhToan }}</h6>
+                                        </td>
+
+                                        <td style="width:25px">
+                                            <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->Vanchuyen->vc_ten }}</h6>
+                                        </td>
+
+                                        <td style="width:25px">
+                                            <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->ThanhToan->tt_ten }}</h6>
+                                        </td>
+                                        <td style="width:25px">
+                                            <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->dh_trangThai }}</h6>
+                                        </td>
+                                        <td style="text-align: center" class="align-middle">
+                                        <a  href="{{ route('admin.donhang.edit' , $sp ->dh_ma ) }}"class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit  |</a>
+                                        <a  href="{{ route('admin.donhang.show' , $sp ->dh_ma ) }}" class="text-secondary font-weight-bold text-xs"><i class="fa fa-television" aria-hidden="true"></i> |</a>
+                                        <a style="color: #f64468" href="{{ route('admin.donhang.delete' , $sp ->dh_ma ) }}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="font-weight-bold text-xs">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
