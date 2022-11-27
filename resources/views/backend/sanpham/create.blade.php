@@ -123,6 +123,18 @@ Danh sách sản phẩm
                             <option value="2" {{ old('sp_trangThai') == 2 ? "selected" : "" }}>Khả dụng</option>
                           </select>
                         </div>
+<<<<<<< HEAD
+=======
+                        <div class="form-group">
+                          <div class="file-loading">
+                            <label>Hình ảnh liên quan sản phẩm</label>
+                            <input id="sp_hinhanhlienquan" type="file" name="sp_hinhanhlienquan[]" multiple>
+                          </div>
+                        </div>
+                        <div style="text-align: center ; padding-top:30px" class="form-group">
+                           <button style="width:70% ; text-align:center"  type="submit" class="btn btn-primary">ADD</button>
+                        </div>
+>>>>>>> origin/nhanh1
 
                         
                         <div style="text-align: center ; padding-top:30px" class="form-group">

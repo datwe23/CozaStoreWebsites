@@ -78,7 +78,11 @@ Danh sách sản phẩm
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div>
+<<<<<<< HEAD
                                                 <img src="{{ asset('photos/' . $sp->sp_hinh) }}" class="avatar avatar-sm me-3" alt="{{ $sp->sp_hinh }}">
+=======
+                                                <img src="{{ asset('photos/' . $sp->sp_hinh) }}" class="avatar avatar-sm me-3" alt="user1">
+>>>>>>> origin/nhanh1
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <p class="text-xs text-secondary mb-0">{{ $sp->sp_ten }}</p>
