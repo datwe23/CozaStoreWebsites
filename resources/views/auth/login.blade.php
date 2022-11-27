@@ -1,69 +1,50 @@
-@extends('layouts.app')
+@include('backend.layouts.partials.link')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('nv_taiKhoan') ? ' has-error' : '' }}">
-                            <label for="nv_taiKhoan" class="col-md-4 control-label">Tên tài khoản</label>
-
-                            <div class="col-md-6">
-                                <input id="nv_taiKhoan" type="text" class="form-control" name="nv_taiKhoan" value="{{ old('nv_taiKhoan') }}" required autofocus>
-
-                                @if ($errors->has('nv_taiKhoan'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('nv_taiKhoan') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+{{-- Thay thế nội dung vào Placeholder `main-content` của view `frontend.layouts.master` --}}
+@section('main-content')
+    <body class="">
+      <main class="main-content  mt-0">
+        <section>
+          <div class="page-header min-vh-100">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+                  <div class="card card-plain">
+                    <div class="card-header pb-0 text-start">
+                      <h4 class="font-weight-bolder">Sign In</h4>
+                      <p class="mb-0">Enter your email and password to sign in</p>
+                    </div>
+                    <div class="card-body">
+                      <form  action="{{ route('login.post') }}" method="POST" role="form">
+                        @csrf
+                        <div class="mb-3">
+                            <input type="text" id="email_address" placeholder="Enter your email" class="form-control" name="email" required autofocus>
+                            @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif
                         </div>
-
-                        <div class="form-group{{ $errors->has('nv_matKhau') ? ' has-error' : '' }}">
-                            <label for="nv_matKhau" class="col-md-4 control-label">Mật khẩu</label>
-
-                            <div class="col-md-6">
-                                <input id="nv_matKhau" type="password" class="form-control" name="nv_matKhau" required>
-
-                                @if ($errors->has('nv_matKhau'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('nv_matKhau') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="md-3">
+                            <input type="password" id="password" placeholder="Enter your password" class="form-control" name="password" required>
+                            @if ($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                            @endif
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="nv_ghinhodangnhap" {{ old('nv_ghinhodangnhap') ? 'checked' : '' }}> Ghi nhớ đăng nhập
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Đăng nhập
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Quên mật khẩu?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+                      </form>
+                    </div>
+                  </div>
                 </div>
+                <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
+                  <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
+              background-size: cover;">
+                    <span class="mask bg-gradient-primary opacity-6"></span>
+                    <h4 class="mt-5 text-white font-weight-bolder position-relative">"Attention is the new currency"</h4>
+                    <p class="text-white position-relative">The more effortless the writing looks, the more effort the writer actually put into the process.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+          </div>
+        </section>

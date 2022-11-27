@@ -9,8 +9,8 @@
                 </div>
 
                 <div class="right-top-bar flex-w h-full">
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        Help & FAQs
+                    <a href="{{ route('admin.sanpham.index') }}" class="flex-c-m trans-04 p-lr-25">
+                        Management Page
                     </a>
 
                     <a href="#" class="flex-c-m trans-04 p-lr-25">

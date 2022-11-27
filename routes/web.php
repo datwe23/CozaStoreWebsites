@@ -14,12 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
-
 //Frontend
 use App\Http\Controllers\Frontend\FrontendController;
     
@@ -78,3 +72,13 @@ Route::post('admin/loai/store', [LoaiController::class , 'store'])->name('admin.
 Route::get('/admin/loai/edit/{id}', [LoaiController::class , 'edit'])->name('admin.loai.edit');
 Route::put('/admin/loai/edit/{id}', [LoaiController::class , 'update'])->name('admin.loai.update');
 Route::delete('/admin/loai/delete/{id}', [LoaiController::class , 'destroy'])->name('admin.loai.destroy');
+
+
+use App\Http\Controllers\Auth\AuthController;
+  
+Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
+Route::get('registration', [AuthController::class, 'registration'])->name('register');
+Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
+Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard'); 
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');

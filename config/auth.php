@@ -60,10 +60,9 @@ return [
     */
 
     'providers' => [
-
         'users' => [
-            'driver' => 'custom',
-            'model' => App\Models\NhanVien::class,
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
         ],
 
         // 'users' => [

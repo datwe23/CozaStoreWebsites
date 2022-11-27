@@ -56,7 +56,7 @@ Danh sách sản phẩm
                             <thead>
                                 <tr>
                                     <th style="width:15px" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">STT</th>
-                                    <th style="text-align:center" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product ID</th>
+                                    <th style="" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product ID</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Photo | Product name</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product portfolio</th>
                                     <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
@@ -72,8 +72,8 @@ Danh sách sản phẩm
                                     <td style="width:25px">
                                       <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $key+1 }}</h6>
                                   </td>
-                                  <td style="width:25px ; text-align:center">
-                                    <h6  class="text-xs font-weight-bold mb-0">{{ $sp->sp_ma }}</h6>
+                                  <td style="width:25px ; text-align:center ;  ">
+                                    <h6 style="color:#5e72e4"  class="text-xs font-weight-bold mb-0">PROID{{ $sp->sp_ma }}000</h6>
                                 </td>
                                     <td>
                                         <div class="d-flex px-2 py-1">
@@ -85,8 +85,8 @@ Danh sách sản phẩm
                                             </div>
                                         </div>
                                     </td>
-                                    <td style="text-align: center">
-                                        <p class="text-xs font-weight-bold mb-0">{{ $sp->loaisanpham->l_ten }}</p>
+                                    <td >
+                                        <p style="text-align:center" class="text-xs font-weight-bold mb-0">{{ $sp->loaisanpham->l_ten }}</p>
                                     </td>
                                     <td style="width:25px" class="align-middle text-center">
                                       <p  class="text-secondary text-xs font-weight-bold">{{ $sp->sp_giaBan }}<span style="color:red ;font-size:11px ; padding-top:15px ; padding-left:4px">$</span></p>
@@ -95,15 +95,38 @@ Danh sách sản phẩm
                                       <p style="text-decoration: line-through red solid;"class="text-secondary text-xs font-weight-bold">{{ $sp->sp_giaGoc }}<span style="color:red ;font-size:11px ; padding-top:15px ; padding-left:4px">$</span></p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        <span class="badge badge-sm bg-gradient-success">{{ $sp->sp_trangThai }}</span>
+
+                                        <?php
+                                            if($sp->sp_trangThai==1){
+                                                ?>
+                                                <span class="badge badge-sm bg-gradient-success">
+                                                <?php
+                                                echo 'ACTIVE';
+                                                ?>
+                                                </span>
+                                                <?php
+                                            } 
+                                            else{
+                                                ?>
+                                                <span style="background-color:#f44168" class="badge badge-sm">
+                                                <?php
+                                                echo 'HIDDEN ';
+                                                ?>
+                                                 </span>
+                                                <?php
+                                            }
+                                        ?>
+
+                                        </span>
                                     </td>
-                                    
+
                                     <td style="text-align: center" class="align-middle">
-                                        <a  href="{{ route('admin.sanpham.edit' , $sp ->sp_ma ) }}"class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit  |</a>
+                                        <a  href="{{ route('admin.sanpham.edit' , $sp ->sp_ma ) }}" style="color: #5e72e4;"class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit  |</a>
                                         <a  href="{{ route('admin.sanpham.demo' , $sp ->sp_ma ) }}" class="text-secondary font-weight-bold text-xs"><i class="fa fa-television" aria-hidden="true"></i> |</a>
                                         <a style="color: #f64468" href="{{ route('admin.sanpham.destroy' , $sp ->sp_ma ) }}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="font-weight-bold text-xs">Delete</a>
                                     </td>
                                 </tr>
+
                                 @endforeach
                             </tbody>
                         </table>

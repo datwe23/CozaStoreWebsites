@@ -18,9 +18,15 @@
               <li class="nav-item d-flex align-items-center">
                   <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                       <i class="fa fa-user me-sm-1"></i>
-                      <span class="d-sm-inline d-none">Sign In</span>
+                      <span class="d-sm-inline d-none">Sign Out</span>
                   </a>
               </li>
+              <li style="padding-left:10px" class="nav-item d-flex align-items-center">
+                <a href="{{ route('frontend.home') }}" class="nav-link text-white font-weight-bold px-0">
+                    <i style="padding-right:5px"class="fa fa-home" aria-hidden="true"></i>
+                    <span class="d-sm-inline d-none">Home</span>
+                </a>
+            </li>
               <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                   <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
                       <div class="sidenav-toggler-inner">

@@ -44,7 +44,7 @@ Danh sách sản phẩm
         <div class="col-12">
             <div style="padding:30px" class="card mb-4">
                 <div style="padding-left:0px ; padding-top:0px ;border-bottom:1px solid rgb(94, 92, 92) " class="card-header pb-0">
-                    <h6 style="padding-bottom: 7px">Product edit page</h6>
+                    <h6 style="padding-bottom: 7px">Product edit product : <span style="text-transform:lowercase">{{ old('sp_ten', $sp->sp_ten) }}</span> </h6>
                 </div>
                 <div >
                     <div class="table-responsive p-0">
@@ -118,9 +118,9 @@ Danh sách sản phẩm
                             </div>
                             <div class="form-group col-4">
                               <label for="sp_trangThai">Trạng thái</label>
-                              <select name="sp_trangThai" class="form-control">
-                                  <option value="1" {{ old('sp_trangThai', $sp->sp_trangThai) == 1 ? "selected" : "" }}>Khóa</option>
-                                  <option value="2" {{ old('sp_trangThai', $sp->sp_trangThai) == 2 ? "selected" : "" }}>Khả dụng</option>
+                              <select value="2"name="sp_trangThai" class="form-control">
+                                  <option value="1" {{ old('sp_trangThai', $sp->sp_trangThai) == 1 ? "selected" : "" }}>Lock up</option>
+                                  <option  {{ old('sp_trangThai', $sp->sp_trangThai) == 2 ? "selected" : "" }}>Active</option>
                               </select>
                             </div>
                             <div class="form-group ">
