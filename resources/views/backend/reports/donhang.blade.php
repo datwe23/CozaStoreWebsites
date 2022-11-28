@@ -31,16 +31,16 @@ Báo cáo Đơn hàng
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="thoigianLapBaoCao">Thời gian lập báo cáo</label>
-                <input type="text" class="form-control" id="thoigianLapBaoCao">
+                <input type="date" class="form-control" id="thoigianLapBaoCao">
                 <span id="thoigianLapBaoCaoText" class="notice"></span>
             </div>
             <div class="form-group" style="display: none;">
                 <label for="tuNgay">Từ ngày</label>
-                <input type="text" class="form-control" id="tuNgay" name="tuNgay">
+                <input type="date" class="form-control" id="tuNgay" name="tuNgay">
             </div>
             <div class="form-group" style="display: none;">
                 <label for="denNgay">Đến ngày</label>
-                <input type="text" class="form-control" id="denNgay" name="denNgay">
+                <input type="date" class="form-control" id="denNgay" name="denNgay">
             </div>
             <button type="submit" class="btn btn-primary" id="btnLapBaoCao">Lập báo cáo</button>
         </form>
