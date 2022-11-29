@@ -22,6 +22,7 @@ Danh sách Customers
 
 {{-- Thay thế nội dung vào Placeholder `content` của view `backend.layouts.master` --}}
 @section('content')
+<h1> Tran Phuc Duy dep trai </h1>
 
 <div class="flash-message">
     @foreach (['danger', 'warning', 'success', 'info'] as $msg)
