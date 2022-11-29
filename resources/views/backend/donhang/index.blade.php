@@ -77,7 +77,7 @@ Danh sách sản phẩm
                                         
                                         <td>
                                             <div class="d-flex flex-column justify-content-center">
-                                                <p class="text-xs text-secondary mb-0">{{$sp->KhachHang->kh_hoTen}}</p>
+                                                <p class="text-xs text-secondary mb-0"></p>
                                             </div>
                                         
                                     </td>
