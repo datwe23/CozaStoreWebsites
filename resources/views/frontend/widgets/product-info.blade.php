@@ -3,7 +3,7 @@
         <button class="how-pos3 hov3 trans-04 js-hide-modal" data-sp-ma="{{ $sp->sp_ma }}">
             <img src="{{ asset('themes/cozastore/images/icons/icon-close.png') }}" alt="CLOSE">
         </button>
-
+        <h2>sdhgysdfgsdg</h2>
         <div  class="row">
             <div style="padding-bottom:0px" class="col-md-6 col-lg-7 p-b-30">
                 <div class="p-l-25 p-r-30 p-lr-0-lg">
