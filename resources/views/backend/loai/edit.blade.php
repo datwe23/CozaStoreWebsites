@@ -23,7 +23,11 @@ Danh sách sản phẩm
 
 <body class="g-sidenav-show   bg-gray-100">
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
   @include('backend.layouts.partials.navbar')
   <main class="main-content position-relative border-radius-lg ">
   @include('backend.layouts.partials.sidebar')
@@ -54,7 +58,11 @@ Danh sách sản phẩm
                         </div>
 
                       </form>
+<<<<<<< HEAD
 
+=======
+                       
+>>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
                     </div>
                 </div>
             </div>

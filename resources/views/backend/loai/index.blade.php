@@ -65,10 +65,17 @@ Danh sách sản phẩm
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category Name</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                                     <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+<<<<<<< HEAD
 
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
 
+=======
+                        
+                                    <th class="text-secondary opacity-7"></th>
+                                </tr>
+                                
+>>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
                             </thead>
                             <tbody>
                               @foreach($danhsachsanpham as $key => $sp)
@@ -77,7 +84,11 @@ Danh sách sản phẩm
                                     <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $key+1 }}</h6>
                                 </td>
 
+<<<<<<< HEAD
 
+=======
+                                
+>>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
 
                                     <td style="width:25px" class="align-middle text-center">
                                       <span class="text-secondary text-xs font-weight-bold">{{ $sp ->l_ma}}</span>
@@ -86,16 +97,28 @@ Danh sách sản phẩm
                                         <span class="text-secondary text-xs font-weight-bold">{{ $sp ->l_ten}}</span>
                                       </td>
 
+<<<<<<< HEAD
 
                                     <td class="align-middle text-center text-sm">
                                         <span class="badge badge-sm bg-gradient-success">Online</span>
                                     </td>
 
+=======
+                                    
+                                    <td class="align-middle text-center text-sm">
+                                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                                    </td>
+                                    
+>>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
                                     <td style="text-align: center" class="align-middle">
                                         <a  href="{{route('admin.loai.edit',$sp ->l_ma)}}"class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit  |</a>
                                         <a style="color: #f64468" href="{{route('admin.loai.destroy',$sp ->l_ma)}}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="font-weight-bold text-xs">Delete</a>
                                     </td>
+<<<<<<< HEAD
 
+=======
+                                    
+>>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
                                 </tr>
                                 @endforeach
                             </tbody>
