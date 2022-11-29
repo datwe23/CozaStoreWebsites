@@ -60,20 +60,16 @@ Route::put('/admin/sanpham/edit/{id}', [SanphamController::class, 'update'])->na
 Route::get('/admin/sanpham/delete/{id}', [SanphamController::class, 'destroy'])->name('admin.sanpham.destroy');
 Route::get('admin/sanpham/demo/{id}', [FrontendController::class, 'productDemo'])->name('admin.sanpham.demo');
 
-
 use App\Http\Controllers\Backend\LoaiController;
-use App\Http\Controllers\LoaifController;
-
-Route::get('admins', [LoaifController::class, 'index'])->name('admin.loai.index');
-
 // route Danh mục Loại Sản phẩm
 // Hàm Route::resource() sẽ tạo toàn bộ các route CRUD theo tiêu chuẩn RestFul API
-Route::get('admin/index', [LoaiController::class, 'index'])->name('admin.loai.index');
-Route::get('admin/loai/create', [LoaiController::class, 'create'])->name('admin.loai.create');
-Route::post('admin/loai/store', [LoaiController::class, 'store'])->name('admin.loai.store');
-Route::get('/admin/loai/edit/{id}', [LoaiController::class, 'edit'])->name('admin.loai.edit');
-Route::put('/admin/loai/edit/{id}', [LoaiController::class, 'update'])->name('admin.loai.update');
-Route::delete('/admin/loai/delete/{id}', [LoaiController::class, 'destroy'])->name('admin.loai.destroy');
+Route::get('admin/index',[LoaiController::class , 'index'] )->name('admin.loai.index');
+Route::get('admin/loai/create', [LoaiController::class , 'create'])->name('admin.loai.create');
+Route::post('admin/loai/store', [LoaiController::class , 'store'])->name('admin.loai.store');
+Route::get('/admin/loai/edit/{id}', [LoaiController::class , 'edit'])->name('admin.loai.edit');
+Route::post('/admin/loai/edit/{id}', [LoaiController::class , 'update'])->name('admin.loai.update');
+Route::get('/admin/loai/delete/{id}', [LoaiController::class , 'destroy'])->name('admin.loai.destroy');
+
 
 
 use App\Http\Controllers\DonHangController;
@@ -122,3 +118,6 @@ Route::get('admin/color/delete/{id}', [MauController::class, 'destroy'])->name('
 Route::get('admin/color/edit/{id}', [MauController::class, 'edit'])->name('color.edit');
 Route::post('admin/color/update/{id}', [MauController::class, 'update'])->name('color.update');
 Route::post('admin/color/store', [MauController::class, 'store'])->name('color.store');
+
+
+
