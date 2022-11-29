@@ -34,7 +34,7 @@ Danh sách sản phẩm
 
 <body class="g-sidenav-show   bg-gray-100">
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
-  
+
   @include('backend.layouts.partials.navbar')
   <main class="main-content position-relative border-radius-lg ">
   @include('backend.layouts.partials.sidebar')
@@ -46,7 +46,7 @@ Danh sách sản phẩm
                     <div class="header-left">
                         <h6>Product Management</h6>
                     </div>
-    
+
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -73,13 +73,13 @@ Danh sách sản phẩm
                                   <td style="width:25px ; text-align:center">
                                     <h6  class="text-xs font-weight-bold mb-0">{{ $sp->dh_ma }}</h6>
                                 </td>
-                                    
-                                        
+
+
                                         <td>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <p class="text-xs text-secondary mb-0">{{$sp->KhachHang->kh_hoTen}}</p>
                                             </div>
-                                        
+
                                     </td>
 
                                         <td class="align-middle text-center text-sm">
@@ -93,7 +93,7 @@ Danh sách sản phẩm
                                                 ?>
                                                 </span>
                                                 <?php
-                                            } 
+                                            }
                                             else{
                                                 ?>
                                                 <span style="background-color:#f44168" class="badge badge-sm">
@@ -127,7 +127,7 @@ Danh sách sản phẩm
                                                 ?>
                                                 </span>
                                                 <?php
-                                            } 
+                                            }
                                             else{
                                                 ?>
                                                 <span style="background-color:#f44168" class="badge badge-sm">
@@ -144,7 +144,7 @@ Danh sách sản phẩm
                                         <td style="text-align: center" class="align-middle">
                                         <a  href="{{ route('admin.donhang.edit' , $sp ->dh_ma ) }}"class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit  |</a>
                                         <a  href="{{ route('admin.donhang.show' , $sp ->dh_ma ) }}" class="text-secondary font-weight-bold text-xs"><i class="fa fa-television" aria-hidden="true"></i> |</a>
-                                        <a style="color: #f64468" href="{{ route('admin.donhang.delete' , $sp ->dh_ma ) }}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="font-weight-bold text-xs">Delete</a>
+                                        <a style="color: #f64468" href="{{ route('admin.donhang.delete' , $sp->dh_ma ) }}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="font-weight-bold text-xs">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -164,7 +164,7 @@ Danh sách sản phẩm
                         <script>
                             document.write(new Date().getFullYear())
                         </script>, made with by
-                        <a  class="font-weight-bold" target="_blank">Creative Group 5</a> 
+                        <a  class="font-weight-bold" target="_blank">Creative Group 5</a>
                     </div>
                 </div>
                 <div class="col-lg-6">

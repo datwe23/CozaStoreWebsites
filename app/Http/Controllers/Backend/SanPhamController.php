@@ -133,13 +133,13 @@ class SanPhamController extends Controller
      */
     function edit($id)
     {
-        // Sử dụng Eloquent Model để truy vấn dữ liệu 
+        // Sử dụng Eloquent Model để truy vấn dữ liệu
         $sp = SanPham::where("sp_ma", $id)->first();
         $ds_loai = Loai::all();
 
-        // Đường dẫn đến view được quy định như sau: <FolderName>.<ViewName> 
-        // Mặc định đường dẫn gốc của method view() là thư mục `resources/views` 
-        // Hiển thị view `backend.sanpham.edit` 
+        // Đường dẫn đến view được quy định như sau: <FolderName>.<ViewName>
+        // Mặc định đường dẫn gốc của method view() là thư mục `resources/views`
+        // Hiển thị view `backend.sanpham.edit`
         return view('backend.sanpham.edit')
             // với dữ liệu truyền từ Controller qua View, được đặt tên là `sp` và `danhsachloai`
             ->with('sp', $sp)
@@ -238,11 +238,11 @@ class SanPhamController extends Controller
         // Nếu tìm thấy được sản phẩm thì tiến hành thao tác DELETE
         if (empty($sp) == false) {
 
-            // DELETE các dòng liên quan trong table `HinhAnh` 
+            // DELETE các dòng liên quan trong table `HinhAnh`
             foreach ($sp->hinhanhlienquan()->get() as $hinhAnh) {
-                // Xóa hình cũ để tránh rác 
+                // Xóa hình cũ để tránh rác
                 Storage::delete('photos/' . $hinhAnh->ha_ten);
-                // Xóa record 
+                // Xóa record
                 $hinhAnh->delete();
             }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Loai;
@@ -15,10 +16,10 @@ class LoaiController extends Controller
      */
     public function index()
     {
-         // Sử dụng Eloquent Model để truy vấn dữ liệu
-    $danhsachsanpham = Loai::all(); // SELECT * FROM loaisanpham
+        // Sử dụng Eloquent Model để truy vấn dữ liệu
+        $danhsachsanpham = Loai::all(); // SELECT * FROM loaisanpham
 
-    return  view('backend.loai.index', compact("danhsachsanpham"));
+        return  view('backend.loai.index', compact("danhsachsanpham"));
     }
 
     /**
@@ -27,7 +28,7 @@ class LoaiController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.loai.create');
     }
 
     /**
@@ -38,7 +39,22 @@ class LoaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->isMethod('POST')) {
+            $validator = Validator::make($request->all(), [
+                'l_ma' => 'required',
+                'l_ten' => 'required'
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+            $category = new loai;
+            $category->l_ma = $request->l_ma;
+            $category->l_ten = $request->l_ten;
+            $category->save();
+            return redirect()->route('admin.loai.index')->with('success', 'Product category successfully');
+        }
     }
 
     /**
@@ -49,7 +65,6 @@ class LoaiController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -60,7 +75,8 @@ class LoaiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Loai::find($id);
+        return view('backend.loai.edit', ['category' => $category]);
     }
 
     /**
@@ -72,7 +88,11 @@ class LoaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Loai::find($id);
+        $category->l_ma = $request->l_ma;
+        $category->l_ten = $request->l_ten;
+        $category->save();
+        return redirect()->route('admin.loai.index');
     }
 
     /**
@@ -83,6 +103,8 @@ class LoaiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Loai::find($id);
+        $category->delete();
+        return redirect()->route('admin.loai.index');
     }
 }

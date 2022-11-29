@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mau;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator; 
+use Illuminate\Support\Facades\Validator;
 
 class MauController extends Controller
 {
@@ -13,13 +13,13 @@ class MauController extends Controller
         $colors = Mau::latest()->paginate(10);
 
         return view('backend.color.index', compact('colors'))
-            ->with('i', (request()->input('page, 1') - 1) * 5);           
+            ->with('i', (request()->input('page, 1') - 1) * 5);
     }
     public function create(Request $request)
     {
          return view('backend.color.create');
 }
-    
+
     public function store(Request $request)
     {
         if ($request -> isMethod('POST')){
@@ -73,7 +73,7 @@ class MauController extends Controller
             ->with( 'successcreate', 'Product updated successfully');
 
             }
-        
+
     }
     public function destroy($id)
     {
@@ -81,6 +81,5 @@ class MauController extends Controller
         $colors->delete();
         return redirect()->route('color.index')
         ->with( 'successdelete', 'Product delete successfully');
-
     }
 }
