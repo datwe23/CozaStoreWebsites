@@ -70,17 +70,12 @@ Danh sách sản phẩm
                                     <td style="width:25px">
                                       <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $key+1 }}</h6>
                                   </td>
-                                  <td style="width:25px ; text-align:center">
+                                <td style="width:25px ; text-align:center">
                                     <h6  class="text-xs font-weight-bold mb-0">{{ $sp->dh_ma }}</h6>
                                 </td>
 
+                                
 
-                                        <td>
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <p class="text-xs text-secondary mb-0"></p>
-                                            </div>
-
-                                    </td>
 
                                         <td class="align-middle text-center text-sm">
 

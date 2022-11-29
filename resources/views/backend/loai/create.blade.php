@@ -1,4 +1,3 @@
-
 {{-- View này sẽ kế thừa giao diện từ `backend.layouts.master` --}}
 @include('backend.layouts.partials.link')
 
@@ -24,11 +23,9 @@ Danh sách sản phẩm
 
 <body class="g-sidenav-show   bg-gray-100">
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
   @include('backend.layouts.partials.navbar')
   <main class="main-content position-relative border-radius-lg ">
   @include('backend.layouts.partials.sidebar')
@@ -69,11 +66,9 @@ Danh sách sản phẩm
                         </div>
 
                       </form>
-<<<<<<< HEAD
 
-=======
-                       
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
                     </div>
                 </div>
             </div>
@@ -86,7 +81,7 @@ Danh sách sản phẩm
                     <div class="copyright text-center text-sm text-muted text-lg-start">
                         ©
                         <script>
-                            document.write(new Date().getFullYear())
+document.write(new Date().getFullYear())
                         </script>, made with <i class="fa fa-heart"></i> by
                         <a href="" class="font-weight-bold" target="_blank">Creative Group 5</a> for a better web.
                     </div>
@@ -115,11 +110,9 @@ Danh sách sản phẩm
 
 <style>
 
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
       .file-upload {
         background-color: #ffffff;
         width: 99%;
@@ -127,44 +120,36 @@ Danh sách sản phẩm
         margin: 0 auto;
         padding: 20px;
       }
-<<<<<<< HEAD
 
 
-=======
-      
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
+
       .file-upload-btn:hover {
         background: #1AA059;
         color: #ffffff;
         transition: all .2s ease;
         cursor: pointer;
       }
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
       .file-upload-btn:active {
         border: 0;
         transition: all .2s ease;
       }
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
       .file-upload-content {
         display: none;
         text-align: center;
       }
-<<<<<<< HEAD
+
 
       .file-upload-input {
-=======
-      
-      .file-upload-input { 
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+      .file-upload-input {
         position: absolute;
         margin: 0;
         padding: 0;
@@ -173,47 +158,39 @@ Danh sách sản phẩm
         opacity: 0;
         cursor: pointer;
       }
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
       .image-upload-wrap {
         margin-top: 20px;
         position: relative;
       }
 
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
       .image-title-wrap {
         padding: 0 15px 15px 15px;
         color: #222;
       }
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
       .file-upload-image {
         max-height: 200px;
         max-width: 200px;
         margin: auto;
         padding: 20px;
       }
-<<<<<<< HEAD
 
 
 
 
-=======
-      
 
-      
-    
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
+
+
       .remove-image:active {
         border: 0;
         transition: all .2s ease;
@@ -222,7 +199,7 @@ Danh sách sản phẩm
 <script>
     function readURL(input) {
         if (input.files && input.files[0]) {
-<<<<<<< HEAD
+
 
           var reader = new FileReader();
 
@@ -237,31 +214,26 @@ Danh sách sản phẩm
 
           reader.readAsDataURL(input.files[0]);
 
-=======
-      
+
           var reader = new FileReader();
-      
-          reader.onload = function(e) {
+reader.onload = function(e) {
             $('.image-upload-wrap').hide();
-      
+
             $('.file-upload-image').attr('src', e.target.result);
             $('.file-upload-content').show();
-      
+
             $('.image-title').html(input.files[0].name);
           };
-      
+
           reader.readAsDataURL(input.files[0]);
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
         } else {
           removeUpload();
         }
       }
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
       function removeUpload() {
         $('.file-upload-input').replaceWith($('.file-upload-input').clone());
         $('.file-upload-content').hide();
@@ -273,10 +245,8 @@ Danh sách sản phẩm
           $('.image-upload-wrap').bind('dragleave', function () {
               $('.image-upload-wrap').removeClass('image-dropping');
       });
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
+
 </script>
 </body>
