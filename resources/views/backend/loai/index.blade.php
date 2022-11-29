@@ -42,8 +42,18 @@ Danh sách sản phẩm
     <div class="row">
         <div class="col-12">
             <div class="card mb-4">
-                <div class="card-header pb-0">
-                    <h6>Authors table</h6>
+                <div style="justify-content: space-between ; display:flex" class="card-header ">
+                    <div class="header-left">
+                        <h6>Product Management</h6>
+                    </div>
+                    @if ($message = Session::get('success'))
+                 <div class="alert alert-success">
+                 <p>{{ $message }}</p>
+                </div>
+                @endif
+                    <div class="header-right">
+                        <a href="{{ route('admin.loai.create') }}" class="btn btn-primary btn-sm mb-0 w-100" ><i style="padding-right:10px" class="fa fa-plus-square" aria-hidden="true"></i>Add new products</a>
+                    </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -51,40 +61,41 @@ Danh sách sản phẩm
                             <thead>
                                 <tr>
                                     <th style="width:25px" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">STT</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category ID</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category Name</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
-                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                                    <th style="width:25px" class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                        
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
+                                
                             </thead>
                             <tbody>
                               @foreach($danhsachsanpham as $key => $sp)
                                 <tr>
                                   <td style="width:25px">
-                                    <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->sp_ma }}</h6>
+                                    <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $key+1 }}</h6>
                                 </td>
 
-                                    <td>
-                                        <p class="font-weight-bold mb-0">Manager</p>
-                                    </td>
+                                
 
                                     <td style="width:25px" class="align-middle text-center">
-                                      <span class="text-secondary text-xs font-weight-bold">{{ $sp->sp_giaBan }}</span>
+                                      <span class="text-secondary text-xs font-weight-bold">{{ $sp ->l_ma}}</span>
                                     </td>
-
                                     <td style="width:25px" class="align-middle text-center">
-                                      <span class="text-secondary text-xs font-weight-bold"><span style="color:red ;font-size:17px ; padding-top:15px ; padding-right:5px">$</span>{{ $sp->sp_giaGoc }}</span>
-                                    </td>
+                                        <span class="text-secondary text-xs font-weight-bold">{{ $sp ->l_ten}}</span>
+                                      </td>
+
                                     
                                     <td class="align-middle text-center text-sm">
                                         <span class="badge badge-sm bg-gradient-success">Online</span>
                                     </td>
                                     
-                                    <td class="align-middle">
-                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit</a>
+                                    <td style="text-align: center" class="align-middle">
+                                        <a  href="{{route('admin.loai.edit',$sp ->l_ma)}}"class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Edit  |</a>
+                                        <a style="color: #f64468" href="{{route('admin.loai.destroy',$sp ->l_ma)}}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="font-weight-bold text-xs">Delete</a>
                                     </td>
+                                    
                                 </tr>
                                 @endforeach
                             </tbody>

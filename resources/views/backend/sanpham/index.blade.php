@@ -105,10 +105,6 @@ Danh sách sản phẩm
                                             <th style="width:25px"
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Status</th>
-                                            <th style="width:25px"
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Action</th>
-                                            <th class="text-secondary opacity-7"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -132,10 +128,6 @@ Danh sách sản phẩm
                                                         <p class="text-xs text-secondary mb-0">{{ $sp->sp_ten }}</p>
                                                     </div>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <p style="text-align:center" class="text-xs font-weight-bold mb-0">
-                                                    {{ $sp->loaisanpham->l_ten }}</p>
                                             </td>
                                             <td style="width:25px" class="align-middle text-center">
                                                 <p class="text-secondary text-xs font-weight-bold">
@@ -176,7 +168,7 @@ Danh sách sản phẩm
                                                 </span>
                                             </td>
 
-                                            <td style="text-align: center" class="align-middle">
+                                            <td style="text-align: center ; padding-right:10px" class="align-middle">
                                                 <a href="{{ route('admin.sanpham.edit' , $sp ->sp_ma ) }}"
                                                     style="color: #5e72e4;"
                                                     class="text-secondary font-weight-bold text-xs"
