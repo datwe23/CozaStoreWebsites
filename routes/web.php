@@ -61,8 +61,7 @@ Route::get('/admin/sanpham/delete/{id}', [SanphamController::class, 'destroy'])-
 Route::get('admin/sanpham/demo/{id}', [FrontendController::class, 'productDemo'])->name('admin.sanpham.demo');
 
 
-<<<<<<< HEAD
-=======
+
 use App\Http\Controllers\Backend\LoaiController;
 // route Danh mục Loại Sản phẩm
 // Hàm Route::resource() sẽ tạo toàn bộ các route CRUD theo tiêu chuẩn RestFul API
@@ -74,7 +73,6 @@ Route::post('/admin/loai/edit/{id}', [LoaiController::class , 'update'])->name('
 Route::get('/admin/loai/delete/{id}', [LoaiController::class , 'destroy'])->name('admin.loai.destroy');
 
 
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
 
 use App\Http\Controllers\DonHangController;
 
@@ -123,13 +121,3 @@ Route::get('admin/color/edit/{id}', [MauController::class, 'edit'])->name('color
 Route::post('admin/color/update/{id}', [MauController::class, 'update'])->name('color.update');
 Route::post('admin/color/store', [MauController::class, 'store'])->name('color.store');
 
-
-use App\Http\Controllers\Backend\LoaiController;
-// route Danh mục Loại Sản phẩm
-// Hàm Route::resource() sẽ tạo toàn bộ các route CRUD theo tiêu chuẩn RestFul API
-Route::get('admin/index', [LoaiController::class, 'index'])->name('admin.loai.index');
-Route::get('admin/loai/create', [LoaiController::class, 'create'])->name('admin.loai.create');
-Route::post('admin/loai/store', [LoaiController::class, 'store'])->name('admin.loai.store');
-Route::get('/admin/loai/edit/{id}', [LoaiController::class, 'edit'])->name('admin.loai.edit');
-Route::post('/admin/loai/edit/{id}', [LoaiController::class, 'update'])->name('admin.loai.update');
-Route::get('/admin/loai/delete/{id}', [LoaiController::class, 'destroy'])->name('admin.loai.destroy');

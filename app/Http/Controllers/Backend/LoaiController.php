@@ -1,10 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -47,30 +43,25 @@ class LoaiController extends Controller
                 'l_ma' => 'required',
                 'l_ten' => 'required'
             ]);
-<<<<<<< HEAD
             if ($validator->fails()) {
-=======
         if ($validator->fails()) {
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
                 return redirect()->back()
                     ->withErrors($validator)
                     ->withInput();
             }
-<<<<<<< HEAD
             $category = new loai;
             $category->l_ma = $request->l_ma;
             $category->l_ten = $request->l_ten;
             $category->save();
             return redirect()->route('admin.loai.index')->with('success', 'Product category successfully');
-=======
         $category = new loai;
         $category ->l_ma =$request ->l_ma;
         $category ->l_ten =$request ->l_ten;
         $category ->save();
         return redirect() ->route('admin.loai.index') -> with ('success','Product category successfully');
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
         }
     }
+}
 
     /**
      * Display the specified resource.
@@ -80,10 +71,6 @@ class LoaiController extends Controller
      */
     public function show($id)
     {
-<<<<<<< HEAD
-=======
-        
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
     }
 
     /**
@@ -95,11 +82,10 @@ class LoaiController extends Controller
     public function edit($id)
     {
         $category = Loai::find($id);
-<<<<<<< HEAD
         return view('backend.loai.edit', ['category' => $category]);
-=======
+
         return view('backend.loai.edit' ,['category' => $category]);
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
     }
 
     /**
@@ -112,17 +98,14 @@ class LoaiController extends Controller
     public function update(Request $request, $id)
     {
         $category = Loai::find($id);
-<<<<<<< HEAD
         $category->l_ma = $request->l_ma;
         $category->l_ten = $request->l_ten;
         $category->save();
         return redirect()->route('admin.loai.index');
-=======
         $category ->l_ma =$request ->l_ma;
         $category ->l_ten =$request ->l_ten;
         $category ->save();
         return redirect() ->route('admin.loai.index');
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
     }
 
     /**
@@ -134,12 +117,10 @@ class LoaiController extends Controller
     public function destroy($id)
     {
         $category = Loai::find($id);
-<<<<<<< HEAD
         $category->delete();
         return redirect()->route('admin.loai.index');
-=======
         $category ->delete();
         return redirect() ->route('admin.loai.index');
->>>>>>> 4e7cf14b5825f36a6cf3be1e1bfc14abfefd08fb
+
     }
 }
