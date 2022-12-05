@@ -8,7 +8,6 @@ Danh sách sản phẩm
 
 {{-- Thay thế nội dung vào Placeholder `custom-css` của view `` --}}
 @section('custom-css')
-
 <style>
     .img-list {
         width: 100px;
@@ -16,12 +15,8 @@ Danh sách sản phẩm
     }
 </style>
 @endsection
-
-
-
 {{-- Thay thế nội dung vào Placeholder `content` của view `backend.layouts.master` --}}
 @section('content')
-
 <div class="flash-message">
     @foreach (['danger', 'warning', 'success', 'info'] as $msg)
     @if(Session::has('alert-' . $msg))
@@ -29,13 +24,9 @@ Danh sách sản phẩm
             aria-label="close">&times;</a></p>
     @endif
     @endforeach
-
 </div>
-
-
 <body class="g-sidenav-show   bg-gray-100">
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
-
     @include('backend.layouts.partials.navbar')
     <main class="main-content position-relative border-radius-lg ">
         @include('backend.layouts.partials.sidebar')
@@ -69,7 +60,6 @@ Danh sách sản phẩm
                                                 @endif
                                                 @endforeach
                                             </select>
-
                                             <button class="btn "></button>
                                         </div>
                                         <div class="form-group col-4">
@@ -77,13 +67,11 @@ Danh sách sản phẩm
                                             <input type="text" class="form-control" id="sp_giaGoc" name="sp_giaGoc"
                                                 value="{{ old('sp_giaGoc') }}">
                                         </div>
-
                                         <div class="form-group col-4">
                                             <label for="sp_giaGoc">Giá bán</label>
                                             <input type="text" class="form-control" id="sp_giaBan" name="sp_giaBan"
                                                 value="{{ old('sp_giaBan') }}">
                                         </div>
-
                                         <div class="form-group col-4">
                                             <label for="sp_danhGia">Đánh giá</label>
                                             <input type="text" class="form-control" id="sp_danhGia" name="sp_danhGia"
@@ -99,7 +87,6 @@ Danh sách sản phẩm
                                                     onclick="$('.file-upload-input').trigger( 'click' )"><i
                                                         style="padding-right:5px " class="fa fa-upload"
                                                         aria-hidden="true"></i> Add Image</button>
-
                                                 <div class="image-upload-wrap">
                                                     <input class="file-upload-input" id="sp_hinh" type="file"
                                                         name="sp_hinh" type='file' onchange="readURL(this);"
@@ -124,14 +111,11 @@ Danh sách sản phẩm
                                                 </div>
                                             </div>
                                         </div>
-
-
                                         <div class="form-group">
                                             <label for="sp_thongTin">Thông tin</label>
                                             <input type="text" class="form-control" id="sp_thongTin" name="sp_thongTin"
                                                 value="{{ old('sp_thongTin') }}">
                                         </div>
-
                                         <div class="form-group col-4">
                                             <label for="sp_taoMoi">Ngày tạo mới</label>
                                             <input type="date" class="form-control" id="sp_taoMoi" name="sp_taoMoi"
@@ -162,9 +146,7 @@ Danh sách sản phẩm
                                             <button style="width:70% ; text-align:center" type="submit"
                                                 class="btn btn-primary">Lưu</button>
                                         </div>
-
                                 </form>
-
                             </div>
                         </div>
                     </div>
@@ -208,7 +190,6 @@ Danh sách sản phẩm
             </footer>
         </div>
     </main>
-
     <style>
         .file-upload {
             background-color: #ffffff;
@@ -217,56 +198,42 @@ Danh sách sản phẩm
             margin: 0 auto;
             padding: 20px;
         }
-
-
         .file-upload-btn:hover {
             background: #1AA059;
             color: #ffffff;
             transition: all .2s ease;
             cursor: pointer;
         }
-
         .file-upload-btn:active {
             border: 0;
             transition: all .2s ease;
         }
-
         .file-upload-content {
             display: none;
             text-align: center;
         }
-
         .file-upload-input {
             position: absolute;
             margin: 0;
             padding: 0;
-
             outline: none;
             opacity: 0;
             cursor: pointer;
         }
-
         .image-upload-wrap {
             margin-top: 20px;
             position: relative;
         }
-
-
         .image-title-wrap {
             padding: 0 15px 15px 15px;
             color: #222;
         }
-
         .file-upload-image {
             max-height: 200px;
             max-width: 200px;
             margin: auto;
             padding: 20px;
         }
-
-
-
-
         .remove-image:active {
             border: 0;
             transition: all .2s ease;
@@ -275,25 +242,18 @@ Danh sách sản phẩm
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
-
                 var reader = new FileReader();
-
                 reader.onload = function (e) {
                     $('.image-upload-wrap').hide();
-
                     $('.file-upload-image').attr('src', e.target.result);
                     $('.file-upload-content').show();
-
                     $('.image-title').html(input.files[0].name);
                 };
-
                 reader.readAsDataURL(input.files[0]);
-
             } else {
                 removeUpload();
             }
         }
-
         function removeUpload() {
             $('.file-upload-input').replaceWith($('.file-upload-input').clone());
             $('.file-upload-content').hide();

@@ -46,7 +46,7 @@ Danh sách sản phẩm
                     <div class="card mb-4">
                         <div style="justify-content: space-between ; display:flex" class="card-header ">
                             <div class="header-left">
-                                <h6>Product Management</h6>
+                                <h6>Category Management</h6>
                             </div>
                             @if ($message = Session::get('success'))
                             <div class="alert alert-success">

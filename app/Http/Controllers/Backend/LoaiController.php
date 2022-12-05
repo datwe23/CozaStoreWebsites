@@ -20,7 +20,6 @@ class LoaiController extends Controller
 
     return  view('backend.loai.index', compact("danhsachsanpham"));
     }
-
     /**
      *
      * @return \Illuminate\Http\Response
@@ -29,7 +28,6 @@ class LoaiController extends Controller
     {
         return view('backend.loai.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -55,10 +53,8 @@ class LoaiController extends Controller
         return redirect() ->route('admin.loai.index') 
 
         ->with('successcreate', 'Product updated successfully');
-
         }
     }
-
     /**
      * Display the specified resource.
      *
@@ -66,10 +62,8 @@ class LoaiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        
+    {  
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -81,7 +75,6 @@ class LoaiController extends Controller
         $category = Loai::find($id);
         return view('backend.loai.edit' ,['category' => $category]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -97,8 +90,7 @@ class LoaiController extends Controller
         $category ->save();
         return redirect()->route('admin.loai.index')
             ->with('successcreate', 'Product updated successfully');
-}
-
+    }
     /**
      * Remove the specified resource from storage.
      *
