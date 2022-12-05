@@ -72,10 +72,6 @@ Danh sách sản phẩm
                                 <td style="width:25px ; text-align:center">
                                     <h6  class="text-xs font-weight-bold mb-0">{{ $sp->dh_ma }}</h6>
                                 </td>
-
-                                
-
-
                                         <td class="align-middle text-center text-sm">
 
                                         <?php
