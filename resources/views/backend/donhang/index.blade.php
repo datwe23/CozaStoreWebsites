@@ -73,7 +73,6 @@ Danh sách sản phẩm
                                     <h6  class="text-xs font-weight-bold mb-0">{{ $sp->dh_ma }}</h6>
                                 </td>
                                         <td class="align-middle text-center text-sm">
-
                                         <?php
                                             if($sp->dh_daThanhToan==1){
                                                 ?>
@@ -94,20 +93,15 @@ Danh sách sản phẩm
                                                 <?php
                                             }
                                         ?>
-
                                         </span>
                                     </td>
-
                                         <td style="width:25px ; text-align:center" >
                                             <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->Vanchuyen->vc_ten }}</h6>
                                         </td>
-
                                         <td style="width:25px">
                                             <h6 style="padding-left:20px" class="text-xs font-weight-bold mb-0">{{ $sp->ThanhToan->tt_ten }}</h6>
                                         </td>
-
                                         <td class="align-middle text-center text-sm">
-
                                         <?php
                                             if($sp->dh_trangThai==1){
                                                 ?>
@@ -128,7 +122,6 @@ Danh sách sản phẩm
                                                 <?php
                                             }
                                         ?>
-
                                         </span>
                                     </td>
                                         <td style="text-align: center" class="align-middle">
