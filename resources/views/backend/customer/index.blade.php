@@ -22,14 +22,10 @@ Danh sách Customers
 
 {{-- Thay thế nội dung vào Placeholder `content` của view `backend.layouts.master` --}}
 @section('content')
-<h1> Tran Phuc Duy dep trai </h1>
 <h2> test </h2>
 </div>
-
-
 <body class="g-sidenav-show   bg-gray-100">
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
-
     @include('backend.layouts.partials.navbar')
     <main class="main-content position-relative border-radius-lg ">
         @include('backend.layouts.partials.sidebar')
@@ -47,7 +43,6 @@ Danh sách Customers
                                     new customer</a>
                             </div>
                         </div>
-
                         @if ($message = Session::get('success'))
                         <div style="background-color: #4d66f5d7;padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;"
                             class="alert alert-dismissible">
@@ -55,7 +50,6 @@ Danh sách Customers
                             <p style="padding-left: 2px">{{ $message }}</p>
                         </div>
                         @endif
-
                         @if ($message = Session::get('successcreate'))
                         <div style="background-color: #2dce89;color:padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;"
                             class="alert alert-dismissible">
@@ -63,7 +57,6 @@ Danh sách Customers
                             <p style="padding-left: 2px">{{ $message }}</p>
                         </div>
                         @endif
-
                         @if ($message = Session::get('successdelete'))
                         <div style="background-color: #f44168;padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;"
                             class="alert alert-dismissible">
@@ -152,11 +145,8 @@ Danh sách Customers
                                                 <?php
                                             }
                                         ?>
-
                                                 </span>
                                             </td>
-
-
                                             <td style="width:25px" class="align-middle text-center">
                                                 <p class="text-secondary text-xs font-weight-bold">{{ $kh->kh_email }}
                                                 </p>
@@ -165,9 +155,7 @@ Danh sách Customers
                                                 <p class="text-secondary text-xs font-weight-bold">
                                                     {{ $kh->kh_dienThoai }}</p>
                                             </td>
-
                                             <td class="align-middle text-center text-sm">
-
                                                 <?php
                                             if($kh->kh_trangThai==1){
                                                 ?>
@@ -190,10 +178,8 @@ Danh sách Customers
                                                 <?php
                                             }
                                         ?>
-
                                                 </span>
                                             </td>
-
                                             <td class="align-middle">
                                                 <form action="{{ route('customer.destroy',$kh->kh_ma) }}" method="POST">
                                                     <a href="{{ route('customer.edit' , $kh ->kh_ma ) }}"
@@ -225,7 +211,6 @@ Danh sách Customers
                                 ©
                                 <script>
                                     document.write(new Date().getFullYear())
-
                                 </script>, made with by
                                 <a class="font-weight-bold" target="_blank">Creative Group 5</a>
                             </div>
@@ -255,6 +240,4 @@ Danh sách Customers
             </footer>
         </div>
     </main>
-
-
 </body>

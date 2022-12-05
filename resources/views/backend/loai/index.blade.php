@@ -32,11 +32,8 @@ Danh sách sản phẩm
     @endforeach
 
 </div>
-<h1>co Loan test</h1>
-
 <body class="g-sidenav-show   bg-gray-100">
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
-
     @include('backend.layouts.partials.navbar')
     <main class="main-content position-relative border-radius-lg ">
         @include('backend.layouts.partials.sidebar')
@@ -59,14 +56,12 @@ Danh sách sản phẩm
                                     new products</a>
                             </div>
                         </div>
-
                         @if ($message = Session::get('success'))
                         <div style="background-color: #4d66f5d7;padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;" class="alert alert-dismissible">
                             <button style=""type="button" class="btn-close" data-bs-dismiss="alert"></button>
                             <p style="padding-left: 2px">{{ $message }}</p>
                         </div>
                         @endif
-
                         @if ($message = Session::get('successcreate'))
                         <div style="background-color: #2dce89;color:padding-top: 10px;padding-bottom: 0px;border-radius: 0;color: #fff;" class="alert alert-dismissible">
                             <button style=""type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -91,7 +86,7 @@ Danh sách sản phẩm
                                                 STT</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-Category ID</th>
+                                                Category ID</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Category Name</th>
@@ -101,14 +96,10 @@ Category ID</th>
                                             <th style="width:25px"
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Action</th>
-
                                             <th class="text-secondary opacity-7"></th>
                                         </tr>
-
-
                                         <th class="text-secondary opacity-7"></th>
                                         </tr>
-
                                     </thead>
                                     <tbody>
                                         @foreach($danhsachsanpham as $key => $sp)
