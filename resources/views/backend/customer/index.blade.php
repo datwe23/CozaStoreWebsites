@@ -23,7 +23,6 @@ Danh sách Customers
 {{-- Thay thế nội dung vào Placeholder `content` của view `backend.layouts.master` --}}
 @section('content')
 </div>
-<h1>duy tran9</h1>
 
 
 <body class="g-sidenav-show   bg-gray-100">
