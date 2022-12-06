@@ -22,8 +22,6 @@ Danh sách Customers
 
 {{-- Thay thế nội dung vào Placeholder `content` của view `backend.layouts.master` --}}
 @section('content')
-<h1> Tran Phuc Duy dep trai </h1>
-<h2> test </h2>
 </div>
 
 
